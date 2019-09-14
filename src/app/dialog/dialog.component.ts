@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dialog',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent implements OnInit {
+  @Input() input: any;
+    initialValue: string = '';
 
   constructor() { }
 
   ngOnInit() {
+      this.initialValue = this.input.toString();
+      console.log('ngOnInit called');
+      setInterval(() => {
+        this.input++;
+      }, 500);
   }
 
 }

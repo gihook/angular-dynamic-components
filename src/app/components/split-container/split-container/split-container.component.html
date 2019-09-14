@@ -1,0 +1,7 @@
+<div class="main-container">
+  <ng-container *ngFor="let container of containers">
+    <div class="content-container" [style.width]="container.width + '%'">
+        <app-dynamic [type]="container.type" [input]="container.input"></app-dynamic>
+    </div>
+  </ng-container>
+</div>
